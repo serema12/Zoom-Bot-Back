@@ -3,7 +3,7 @@ import settings
 import time
 import os
 from queue import Queue
-
+import re
 
 
 if __name__ == "__main__":
@@ -12,9 +12,11 @@ if __name__ == "__main__":
     meetingFiles = open("link.txt",'r+')
     #Set: Avoid dupplicate link
     for link in list(set(meetingFiles.readlines())):
+        
+              
         meetingqueue.put(link)
         
-
+    
     #need to regular expression to check whether the link is zoom
     while meetingqueue.qsize() is not None:
         meetingLink = meetingqueue.get()

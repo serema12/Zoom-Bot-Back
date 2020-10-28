@@ -21,14 +21,15 @@ else:
     print('The API Credentials are invalid')
 
 def get_participants(meeting_id = None):
-    #
-    
+    #Hasn release API for zoom zet
+    print('Something')
     
 
 def check_meeting_active(meeting_id = None,host_id = EMAIL_ADDRESS):
     meet_info = client.meeting.get(id = meeting_id, host_id = host_id)
     return meet_info
-get_participants('71054596550')
+
+
 
 
     

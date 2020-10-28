@@ -1,6 +1,5 @@
 import webbrowser
 import pyautogui, time, sys
-import os
 import subprocess
 import botrecord
 import settings
@@ -57,12 +56,17 @@ def join_meeting():
     starttime = time.time()
     #Check if meeting has started yet
     
-
+    
     while True:
-        meeting_status = meetingactions.check_meeting_active.status_code 
-        if (meeting_status == 200):
-            print("Meeting has started")
+        waiting_signal = pyautogui.locateCenterOnScreen(image_path + 'waiting_signal.png')
+        
+        if (waiting_signal is not None):
+            print("Meeting started")
             break
+##        meeting_status = meetingactions.check_meeting_active(meeting_id).status_code 
+##        if (meeting_status == 200):
+##            print("Meeting has started")
+##            break
         
         
         
