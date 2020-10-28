@@ -58,15 +58,15 @@ def join_meeting():
     
     
     while True:
-        waiting_signal = pyautogui.locateCenterOnScreen(image_path + 'waiting_signal.png')
+        #waiting_signal = pyautogui.locateCenterOnScreen(image_path + 'waiting_signal.png')
         
-        if (waiting_signal is not None):
-            print("Meeting started")
+        #if (waiting_signal is not None):
+            #print("Meeting started")
+            #break
+        meeting_status = meetingactions.check_meeting_active(meeting_id).status_code 
+        if (meeting_status == 200):
+            print("Meeting had been created")
             break
-##        meeting_status = meetingactions.check_meeting_active(meeting_id).status_code 
-##        if (meeting_status == 200):
-##            print("Meeting has started")
-##            break
         
         
         

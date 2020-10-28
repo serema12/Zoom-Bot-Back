@@ -21,7 +21,7 @@ else:
     print('The API Credentials are invalid')
 
 def get_participants(meeting_id = None):
-    #Hasn release API for zoom zet
+    #Hasn release API for zoom yet
     print('Something')
     
 
