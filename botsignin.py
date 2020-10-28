@@ -104,7 +104,11 @@ def join_meeting():
         
 def log_in_success():
     print('Bot logged in success')
-    botrecord.record_participant('Khanh',45)
+    meeting_participants = meetingactions.get_participants(meeting_id=None)
+    recording_duration = 30 # 30s
+    ##for participant in meeting_participants:
+        ##botrecord.record_participant(participant,'_00_00_00',recording_duration)
+    botrecord.record_participant('Khanh','_00_00_00',45)
     
     #botrecord.listen_record('Khanh')
     

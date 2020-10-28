@@ -11,9 +11,9 @@ if __name__ == "__main__":
     meetingqueue = Queue(maxsize = 5)
     meetingFiles = open("link.txt",'r+')
     #Set: Avoid dupplicate link
-    for link in list(set(meetingFiles.readlines())):
+    for lines in list(set(meetingFiles.readlines())):
+        link = lines.split()[0]
         
-              
         meetingqueue.put(link)
         
     
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     while meetingqueue.qsize() is not None:
         meetingLink = meetingqueue.get()
         
-        botsignin.log_in_meeting(meetingLink = meetingLink,duration = 30,botname='BOT')
+        #botsignin.log_in_meeting(meetingLink = meetingLink,duration = 30,botname='BOT')
        
         time.sleep(2)
     

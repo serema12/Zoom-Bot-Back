@@ -3,7 +3,7 @@ import wave
 from pydub import AudioSegment
 from pydub.playback import play
 
-def record_participant(name,duration):
+def record_participant(name,duration,timestart):
     chunk = 1024
     audioformat = pyaudio.paInt16
     # dual channel = stereo
@@ -32,7 +32,7 @@ def record_participant(name,duration):
     stream.stop_stream()
     stream.close()
     audio.terminate()
-    wf = wave.open(name+".wav","wb")
+    wf = wave.open(name+timestart+".wav","wb")
     wf.setnchannels(channels)
     wf.setsampwidth(audio.get_sample_size(audioformat))
     wf.setframerate(sample_rate)
